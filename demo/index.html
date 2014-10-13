@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+    <title>tabs@1.0.0 demo</title>
+</head>
+<body>
+<h1 style="text-align: center">tabs@1.0.0 demo</h1>
+<script src="/mx_modules/modulex-debug.js"></script>
+<script src="/mx_modules/ua-debug.js"></script>
+<script src="/mx_modules/feature-debug.js"></script>
+<script src="/mx_modules/meta.js"></script>
+<link href="/mx_modules/css/base.css" rel="stylesheet"/>
+<link href="/mx_modules/button/assets/dpl.css" rel="stylesheet"/>
+<link href="/mx_modules/toolbar/assets/dpl.css" rel="stylesheet"/>
+<link href="/build/tabs/assets/dpl.css" rel="stylesheet"/>
+
+<div class="container">
+
+    <h1>完全程序产生 Tabs - click</h1>
+
+    <div id="tabs">
+
+
+    </div>
+
+
+    <h1>完全程序产生 Tabs - mouse</h1>
+
+    <div id="tabs2">
+
+
+    </div>
+
+
+</div>
+<script>
+    var isBuild = location.href.indexOf('build') !== -1;
+    require.config({
+        base: '/mx_modules',
+        packages: {
+            'tabs': {
+                filter: isBuild ? 'debug' : '',
+                base: isBuild ? '/build/tabs' : '/lib/tabs'
+            }
+        }
+    });
+    require('tabs', function (Tabs) {
+        var tabs = new Tabs({
+            render: "#tabs",
+            listeners: {
+                afterSelectedTabChange: function (e) {
+                    console.log('1 changed to: ' + e.newVal.get('content'))
+                },
+                beforeTabClose: function (e) {
+                    if (!confirm('confirmed to delete ' + e.target.get('content'))) {
+                        e.preventDefault();
+                    }
+                }
+            },
+            items: [
+                {
+                    title: 'tab-1',
+                    selected: true,
+                    content: '<p>panel-1</p>',
+                    closable: true
+                },
+                {
+                    title: 'tab-2',
+                    content: '<p>panel-2</p>'
+                }
+            ]
+        }).render();
+
+
+        var tabs2 = new Tabs({
+            render: "#tabs2",
+            changeType: 'mouse',
+            listeners: {
+                afterSelectedTabChange: function (e) {
+                    console.log('2 changed to: ' + e.newVal.get('content'))
+                }
+            },
+            items: [
+                {
+                    title: 'tab-1',
+                    selected: true,
+                    content: '<p>panel-1</p>',
+                    closable: true
+                },
+                {
+                    title: 'tab-2',
+                    content: '<p>panel-2</p>'
+                }
+            ]
+        }).render();
+    });
+</script>
+</body>
+</html>

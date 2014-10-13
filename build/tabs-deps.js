@@ -1,0 +1,1 @@
+modulex.config("requires",{"tabs":["component/container","util","toolbar","button","component/extension/content-box","xtemplate/runtime"]});
