@@ -1,3 +1,8 @@
+/*
+Copyright 2014, modulex-tabs@1.0.1
+MIT Licensed
+build time: Thu, 16 Oct 2014 08:05:03 GMT
+*/
 modulex.add("tabs", ["toolbar","util","component/container","xtemplate/runtime","button","component/extension/content-box"], function(require, exports, module) {
 var toolbar = require("toolbar");
 var _util_ = require("util");
@@ -184,6 +189,7 @@ tabsBody = function (exports) {
   return exports;
 }();
 tabsXtplTab = function (exports) {
+  /*compiled by xtemplate#3.3.1*/
   var ret = exports = function tab(undefined) {
     var t;
     var t0;
@@ -549,6 +555,7 @@ tabs = function (exports) {
       el.removeClass(self.getBaseCssClass(CLS)).addClass(self.getBaseCssClass(v));
     }
   }, {
+    version: '1.0.1',
     ATTRS: {
       handleGestureEvents: { value: false },
       allowTextSelection: { value: true },

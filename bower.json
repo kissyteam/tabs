@@ -14,12 +14,12 @@
         "!index.js"
     ],
     "dependencies": {
-        "modulex": "modulex#master",
-        "modulex-feature": "modulex-feature#master",
-        "modulex-ua": "modulex-ua#master",
-        "modulex-toolbar": "modulex-toolbar#master"
+        "modulex": "*",
+        "modulex-feature": "modulex-feature#1.x",
+        "modulex-ua": "modulex-ua#1.x",
+        "modulex-toolbar": "modulex-toolbar#1.x"
     },
     "devDependencies": {
-        "modulex-css": "modulex-css#master"
+        "modulex-css": "modulex-css#1.x"
     }
 }
