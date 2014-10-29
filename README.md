@@ -1,6 +1,6 @@
 # tabs
 
-
+ui tabs
 
 [![tabs](https://nodei.co/npm/modulex-tabs.png)](https://npmjs.org/package/modulex-tabs)
 [![NPM downloads](http://img.shields.io/npm/dm/modulex-tabs.svg)](https://npmjs.org/package/modulex-tabs)
